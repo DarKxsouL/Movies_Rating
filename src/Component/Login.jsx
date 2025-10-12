@@ -66,6 +66,8 @@ function Login ({setLoggedIn}) {
     try {
       const result = await signInWithPopup(auth, googleProvider)
       const user = result.user;
+      setLoggedIn(true)
+      navigate('/')
     } catch (error) {
       alert(error.message)
     }
@@ -75,6 +77,8 @@ function Login ({setLoggedIn}) {
     try {
       const result = await signInWithPopup(auth, githubProvider)
       const user = result.user;
+      setLoggedIn(true)
+      navigate('/')
     } catch (error) {
       alert(error.message)
     }
@@ -142,7 +146,7 @@ function Login ({setLoggedIn}) {
           <div className='header'>Create It!</div>
           <form onSubmit={handleSignUpSubmit}>
             <div className='auto-signIn'>
-              <div className='auto-element google'>
+              <div className='auto-element google' onClick={loginWithGoogle}>
                 <div className='google-letter'>G</div>
                 <div className='google-letter'>o</div>
                 <div className='google-letter'>o</div>
@@ -150,7 +154,7 @@ function Login ({setLoggedIn}) {
                 <div className='google-letter'>l</div>
                 <div className='google-letter'>e</div>
               </div>
-              <div className='auto-element github'>Github</div>
+              <div className='auto-element github' onClick={loginWithGithub}>Github</div>
               {/* <div className='auto-element linkedin'>
                 Linked <div className='linked-id-IN'>In</div>
               </div> */}

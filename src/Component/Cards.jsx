@@ -15,7 +15,7 @@ function Card({ onDataFetched }) {
 
   const fetchMovies = async () => {
     const cacheKey = 'movieData';
-    const cacheDuration = 15* 24 * 60 * 60 * 1000; // 24 hours
+    const cacheDuration = 24 * 60 * 60 * 1000; // 24 hours
 
     try {
       const cachedData = localStorage.getItem(cacheKey);
