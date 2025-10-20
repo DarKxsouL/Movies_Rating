@@ -61,7 +61,7 @@ hr {
   position: fixed;
   top: 0;
   z-index: 999;
-  backdrop-filter: blur(10pxx);
+  backdrop-filter: blur(10px);
 }
 
 .navbar a {
