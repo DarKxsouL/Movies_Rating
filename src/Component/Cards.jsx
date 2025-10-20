@@ -3,6 +3,7 @@ import HorizontalScroller from './HorizontalScroller';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useMovies } from '../Component/MovieContext'; 
+import NoMoviePoster from '../assets/NoMoviePoster.png'
 
 // Card is now the main data fetcher and also displays the "Most Popular" list
 function Card({ onDataFetched }) {
@@ -77,7 +78,10 @@ const cachePayload = {
                 </div>
               </div>
               <Link to={'/movie/' + movie.id}>
-                <img src={movie.primaryImage} alt={movie.originalTitle} />
+              {movie.primaryImage? <img src={movie.primaryImage} alt={movie.originalTitle} />
+              : <img src={NoMoviePoster} alt={movie.originalTitle} />
+              }
+                
               </Link>
               <div className='cardDetails'>
                 <div className='cardTitle'>{movie.originalTitle}</div>

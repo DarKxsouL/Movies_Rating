@@ -12,7 +12,7 @@ const PageNotFound = lazy(() => import('./Component/PageNotFound'))
 
 function App () {
   const [loggedIn, setLoggedIn] = useState(false)
-  console.log(loggedIn);
+  console.log("login: ",loggedIn);
   
   return (
     <>

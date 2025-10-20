@@ -39,7 +39,7 @@ function Movies () {
               <h2>Top Box Office Movies</h2>
               <HorizontalScroller>
               {filteredMovies.map(movie => (
-                
+
                 <>
                   {(isAddedToWatchlist = watchlist.includes(movie.id))}
                   
